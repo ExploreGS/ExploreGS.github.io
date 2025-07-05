@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description"
         content="ExploreGS: Explorable 3D Scene Reconstruction with Virtual Camera Samplings and Diffusion Priors">
-  <meta name="keywords" content="3D Gaussian Splatting, 3D Reconstruction, Video Diffusion, Virtual Camera Samplings">
+  <meta name="keywords" content="ExploreGS, Explorable 3D Scene, 3D Gaussian Splatting, 3D Reconstruction, Video Diffusion, Virtual Camera Samplings">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ExploreGS: Explorable 3D Scene Reconstruction with Virtual Camera Samplings and Diffusion Priors</title>
 
@@ -93,7 +93,7 @@
             <span class="author-block">
               <a href="https://minsu1206.github.io/">Minsu Kim</a>,</span>
             <span class="author-block">
-              <a href="https://sites.google.com/yonsei.ac.kr/subinjeon/home">Subin Jeon</a><,</span>
+              <a href="https://sites.google.com/yonsei.ac.kr/subinjeon/home">Subin Jeon</a>,</span>
             <span class="author-block">
               <a href="https://sites.google.com/view/im-join">In Cho</a>,
             </span>
@@ -118,7 +118,7 @@
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>Paper (Coming Soon)</span>
                 </a>
               </span>
               <span class="link-block">
@@ -127,7 +127,7 @@
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>arXiv (Coming Soon)</span>
                 </a>
               </span>
               <!-- Video Link. -->
@@ -147,7 +147,7 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code (Coming Soon)</span>
                   </a>
               </span>
               <!-- Dataset Link. -->
@@ -157,7 +157,7 @@
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
-                  <span>Data</span>
+                  <span>Data (Coming Soon)</span>
                   </a>
             </div>
 
@@ -253,11 +253,16 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+        <!-- TODO: check grammar  -->
+        <div class="content has-text-justified">
+          <img src="./static/images/teaser.png" alt="Teaser Image" style="width: 100%; height: auto; object-fit: cover;">
+        </div>
+
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Recent advances in novel view synthesis (NVS) have enabled real-time rendering with 3D Gaussian Splatting (3DGS).
-            However, existing methods struggle with artifacts and missing regions when rendering \textcolor{blue}{from viewpoints that deviate from the training trajectory}, limiting seamless scene exploration.
+            However, existing methods struggle with artifacts and missing regions when rendering from viewpoints that deviate from the training trajectory, limiting seamless scene exploration.
             To address this, we propose a 3DGS-based pipeline that generates additional training views to enhance reconstruction.
             We introduce an information-gain-driven virtual camera placement strategy to maximize scene coverage, followed by video diffusion priors to refine rendered results.
             Fine-tuning 3D Gaussians with these enhanced views significantly improves reconstruction quality.
@@ -286,7 +291,14 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
-          <img src="./static/images/teasure.png" alt="Teasure Image" style="width: 100%; height: auto; object-fit: cover;">
+          <img src="./static/images/method_overview.png" alt="Method Overview" style="width: 100%; height: auto; object-fit: cover;">
+          <p>
+            Overview of the proposed framework for scene exploration. 
+            (a) The scene is initially optimized using 3D Gaussian Splatting (3DGS) on the given training viewpoints. 
+            (b) Based on the optimized 3DGS and training viewpoints, we generate virtual camera trajectories, and enhance the rendered views using our diffusion-based enhancement model. 
+            (c) Finally, the scene is further optimized using both the original training viewpoints and the newly generated virtual viewpoints.
+            See our paper for more details.
+          </p>
         </div>
       </div>
     </div>
@@ -301,11 +313,22 @@
 
       <!-- TODO: add result video here -->
       <div class="column">
-        <h2 class="title is-3">Result Video</h2>
-        <video id="result-video" autoplay controls muted loop playsinline height="100%">
+        <h2 class="title is-3">Exploration Demo Video - CuratedNerfbusters </h2>
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
           <source src="./static/videos/demo_curatednb_garbage_1.5x.mp4"
                   type="video/mp4">
         </video>
+
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
+          <source src="./static/videos/demo_curatednb_aloe_1.5x.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
+          <source src="./static/videos/demo_curatednb_picnic_1.5x.mp4"
+                  type="video/mp4">
+        </video>
+
       </div>
 
       <!-- Visual Effects. -->
@@ -438,8 +461,66 @@
 
   </div>
 </section>
-<!-- 
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      
+      <div class="column">
+        <h2 class="title is-3">Exploration Demo Video - Wild-Explore</h2>
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
+          <source src="./static/videos/demo_wildexplore_hat_1.5x.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
+          <source src="./static/videos/demo_wildexplore_livingroom_1.5x.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
+          <source src="./static/videos/demo_wildexplore_table2_1.5x.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="container is-max-desktop"></div>
+    <div class="columns is-centered">
+      <div class="column">
+        <h2 class="title is-3">Comparisons</h2>
+
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
+          <source src="./static/videos/comparison_curatednb_aloe.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
+          <source src="./static/videos/comparison_curatednb_garbage.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
+          <source src="./static/videos/comparison_curatednb_picnic.mp4"
+                  type="video/mp4">
+        </video>
+
+        <video id="result-video" autoplay controls muted loop playsinline height="80%">
+          <source src="./static/videos/comparison_curatednb_flowers.mp4"
+                  type="video/mp4">
+        </video>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
