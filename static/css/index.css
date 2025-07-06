@@ -175,6 +175,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   background: white;
+  line-height: 0;
 }
 
 .video-container video {
