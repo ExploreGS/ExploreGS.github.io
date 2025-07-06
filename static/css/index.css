@@ -166,6 +166,7 @@ body {
   gap: 20px;
   padding: 20px;
   width: 80%;
+  max-width: 640px;
 }
 
 .video-container {
