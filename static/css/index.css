@@ -165,15 +165,9 @@ body {
   align-items: center;
   gap: 20px;
   padding: 20px;
-  width: 80%;
-  max-width: 640px;
+  /* width: 80%; */
+  /* max-width: 640px; */
   margin: 0 auto;  
-}
-
-.video-gallery video {
-  width: 100%;        /* ✅ 부모(.video-gallery)의 너비에 맞춤 */
-  height: auto;
-  display: block;     /* ✅ 여백 제거 및 정렬 안정화 */
 }
 
 .video-container {
